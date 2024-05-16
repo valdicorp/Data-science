@@ -1,4 +1,4 @@
 joblib
 nltk
 scikit-learn
-deep_translator
+deep-translator
