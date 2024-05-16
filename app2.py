@@ -1,12 +1,14 @@
 import streamlit as st
 import joblib
 import re
-import nltk
+# import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from PIL import Image
 from nltk.stem import WordNetLemmatizer
 import string
+from deep_translator import GoogleTranslator 
+
 # foction de clean
 def clean_text(text):
     # suppression des caracteres speciaux et des ponctuations
@@ -62,12 +64,12 @@ st.write(("cette application permet de predire le sentiment qui se degage d'une 
 text = st.text_input("Entrer un text en anglais :", placeholder="exemple:I am feeling very sad and alone right now.")
 button_clicked = st.button("Prediction")
 
-
+traduction=GoogleTranslator(source='auto',target='en').translate(text)
 
 image1 = Image.open("joy2.jfif")
 image3 = Image.open("bad3.jfif")
 if button_clicked:
-  pred=sentiment_prediction(text)
+  pred=sentiment_prediction(traduction)
   if pred==1:
      st.write('cette phrase degage un sentiment positif 😊')
      st.image(image1)
