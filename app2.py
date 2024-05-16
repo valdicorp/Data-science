@@ -9,6 +9,7 @@ from nltk.stem import WordNetLemmatizer
 import string
 from deep_translator import GoogleTranslator 
 nltk.download('punkt')
+nltk.download('wordnet')
 # foction de clean
 def clean_text(text):
     # suppression des caracteres speciaux et des ponctuations
