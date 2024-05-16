@@ -1,14 +1,14 @@
 import streamlit as st
 import joblib
 import re
-# import nltk
+import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from PIL import Image
 from nltk.stem import WordNetLemmatizer
 import string
 from deep_translator import GoogleTranslator 
-
+nltk.download('punkt')
 # foction de clean
 def clean_text(text):
     # suppression des caracteres speciaux et des ponctuations
