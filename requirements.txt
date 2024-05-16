@@ -1,1 +1,3 @@
 joblib
+nltk
+re
