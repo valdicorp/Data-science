@@ -62,7 +62,7 @@ resized_image = image2.resize((300, 300))
 st.image(resized_image )
 st.title("Application de prediction des sentiments")
 st.write(("cette application permet de predire le sentiment qui se degage d'une phrase : sentiment positif ou negatif"))
-text = st.text_input("Entrer un text en anglais :", placeholder="exemple:I am feeling very sad and alone right now.")
+text = st.text_input("Entrer un text:", placeholder="exemple:I am feeling very sad and alone right now.")
 button_clicked = st.button("Prediction")
 
 traduction=GoogleTranslator(source='auto',target='en').translate(text)
