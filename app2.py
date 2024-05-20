@@ -10,8 +10,7 @@ import string
 from deep_translator import GoogleTranslator 
 import os
 from playsound import playsound
-def play(text):
-   playsound(text)
+os.system('cls')
 
 # import speech_recognition as sr
 
@@ -98,11 +97,11 @@ def pred(text):
     #  mixer.init()
     #  mixer.music.load("predict_positif.mp3")
     #  mixer.music.play()
-     play("predict_positif.mp3")
+     playsound('predict_positif.mp3')
   else:
      st.write('cette phrase degage un sentiment negatif😒')
      st.image(image3)
-     play("predict_negatif.mp3")
+     playsound('predict_negatif.mp3')
     #  mixer.init()
     #  mixer.music.load("predict_negatif.mp3")
     #  mixer.music.play()
