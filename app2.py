@@ -8,6 +8,7 @@ from PIL import Image
 from nltk.stem import WordNetLemmatizer
 import string
 from deep_translator import GoogleTranslator 
+import os
 from playsound import playsound
 def play(text):
    playsound(text)
