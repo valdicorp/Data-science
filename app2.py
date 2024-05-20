@@ -1,7 +1,7 @@
 import streamlit as st
 import joblib
 import re
-import nltk
+# import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from PIL import Image
@@ -9,20 +9,20 @@ from nltk.stem import WordNetLemmatizer
 import string
 from deep_translator import GoogleTranslator 
 from pygame import mixer
-import speech_recognition as sr
+# import speech_recognition as sr
 
 #nltk.download('punkt')
 #nltk.download('wordnet')
 # vocale
-def vocale():
-    rec=sr.Recognizer()
-    mic=sr.Microphone()
+# def vocale():
+#     rec=sr.Recognizer()
+#     mic=sr.Microphone()
 
-    with mic as src:
-        audio=rec.listen(src)
-        text=rec.recognize_google(audio,language="fr-FR")
-        # print(text)
-    return text
+#     with mic as src:
+#         audio=rec.listen(src)
+#         text=rec.recognize_google(audio,language="fr-FR")
+#         # print(text)
+#     return text
 
 
 # foction de clean
@@ -79,7 +79,7 @@ st.title("Application de prediction des sentiments")
 st.write(("cette application permet de predire le sentiment qui se degage d'une phrase : sentiment positif ou negatif"))
 st.write('')
 text = st.text_input("Entrer un text:", placeholder="exemple:I am feeling very sad and alone right now.")
-voice_bt=st.button('Prediction  vocale')
+# voice_bt=st.button('Prediction  vocale')
 
 button_clicked = st.button("Prediction textuelle")
 text2=""
@@ -105,7 +105,7 @@ def pred(text):
      mixer.music.play()
 if button_clicked:
   pred(text)
-if voice_bt :
-    text2=vocale()
-    st.write(text2)
-    pred(text2)
+# if voice_bt :
+#     text2=vocale()
+#     st.write(text2)
+#     pred(text2)
