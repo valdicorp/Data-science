@@ -5,3 +5,4 @@ deep-translator
 pygame
 SpeechRecognition
 pyaudio
+portaudio
