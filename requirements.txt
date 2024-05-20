@@ -3,5 +3,5 @@ nltk
 scikit-learn
 deep-translator
 pygame
-speech_recognition
 SpeechRecognition
+pyaudio
