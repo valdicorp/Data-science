@@ -82,13 +82,12 @@ text = st.text_input("Entrer un text:", placeholder="exemple:I am feeling very s
 # voice_bt=st.button('Prediction  vocale')
 
 button_clicked = st.button("Prediction textuelle")
-text2=""
-st.write(text2)
+# text2=""
+# st.write(text2)
 image1 = Image.open("joy2.jfif")
 image3 = Image.open("bad3.jfif")
-
+traduction=GoogleTranslator(source='auto',target='en').translate(text)
 if button_clicked:
-   traduction=GoogleTranslator(source='auto',target='en').translate(text)
    pred=sentiment_prediction(traduction)
    if pred==1:
      st.write('cette phrase degage un sentiment positif 😊')
