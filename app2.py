@@ -86,23 +86,22 @@ text2=""
 st.write(text2)
 image1 = Image.open("joy2.jfif")
 image3 = Image.open("bad3.jfif")
-def pred(text):
-  traduction=GoogleTranslator(source='auto',target='en').translate(text)
-  pred=sentiment_prediction(traduction)
-  if pred==1:
+
+if button_clicked:
+   traduction=GoogleTranslator(source='auto',target='en').translate(text)
+   pred=sentiment_prediction(traduction)
+   if pred==1:
      st.write('cette phrase degage un sentiment positif 😊')
      st.image(image1)
      mixer.init()
      mixer.music.load("predict_positif.mp3")
      mixer.music.play()
-  else:
+   else:
      st.write('cette phrase degage un sentiment negatif😒')
      st.image(image3)
      mixer.init()
      mixer.music.load("predict_negatif.mp3")
      mixer.music.play()
-if button_clicked:
-  pred(text)
 # if voice_bt :
 #     text2=vocale()
 #     st.write(text2)
