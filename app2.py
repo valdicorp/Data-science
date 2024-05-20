@@ -8,7 +8,7 @@ from PIL import Image
 from nltk.stem import WordNetLemmatizer
 import string
 from deep_translator import GoogleTranslator 
-import pygame.mixer as mixer
+import mixer
 # import speech_recognition as sr
 
 #nltk.download('punkt')
@@ -82,25 +82,27 @@ text = st.text_input("Entrer un text:", placeholder="exemple:I am feeling very s
 # voice_bt=st.button('Prediction  vocale')
 
 button_clicked = st.button("Prediction textuelle")
-# text2=""
-# st.write(text2)
+text2=""
+st.write(text2)
 image1 = Image.open("joy2.jfif")
 image3 = Image.open("bad3.jfif")
-traduction=GoogleTranslator(source='auto',target='en').translate(text)
-if button_clicked:
-   pred=sentiment_prediction(traduction)
-   if pred==1:
+def pred(text):
+  traduction=GoogleTranslator(source='auto',target='en').translate(text)
+  pred=sentiment_prediction(traduction)
+  if pred==1:
      st.write('cette phrase degage un sentiment positif 😊')
      st.image(image1)
-     mixer.init()
+    #  mixer.init()
      mixer.music.load("predict_positif.mp3")
      mixer.music.play()
-   else:
+  else:
      st.write('cette phrase degage un sentiment negatif😒')
      st.image(image3)
-     mixer.init()
+    #  mixer.init()
      mixer.music.load("predict_negatif.mp3")
      mixer.music.play()
+if button_clicked:
+  pred(text)
 # if voice_bt :
 #     text2=vocale()
 #     st.write(text2)
