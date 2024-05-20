@@ -8,8 +8,23 @@ from PIL import Image
 from nltk.stem import WordNetLemmatizer
 import string
 from deep_translator import GoogleTranslator 
+from pygame import mixer
+import speech_recognition as sr
+
 nltk.download('punkt')
 nltk.download('wordnet')
+# vocale
+def vocale():
+    rec=sr.Recognizer()
+    mic=sr.Microphone()
+
+    with mic as src:
+        audio=rec.listen(src)
+        text=rec.recognize_google(audio,language="fr-FR")
+        # print(text)
+    return text
+
+
 # foction de clean
 def clean_text(text):
     # suppression des caracteres speciaux et des ponctuations
@@ -64,17 +79,33 @@ st.title("Application de prediction des sentiments")
 st.write(("cette application permet de predire le sentiment qui se degage d'une phrase : sentiment positif ou negatif"))
 st.write('')
 text = st.text_input("Entrer un text:", placeholder="exemple:I am feeling very sad and alone right now.")
-button_clicked = st.button("Prediction")
+voice_bt=st.button('Prediction  vocale')
 
-traduction=GoogleTranslator(source='auto',target='en').translate(text)
-
+button_clicked = st.button("Prediction textuelle")
+text2=""
+st.write(text2)
 image1 = Image.open("joy2.jfif")
 image3 = Image.open("bad3.jfif")
-if button_clicked:
+def pred(text):
+  traduction=GoogleTranslator(source='auto',target='en').translate(text)
   pred=sentiment_prediction(traduction)
   if pred==1:
      st.write('cette phrase degage un sentiment positif 😊')
+
+     langage='fr'
      st.image(image1)
+     mixer.init()
+     mixer.music.load("predict_positif.mp3")
+     mixer.music.play()
   else:
      st.write('cette phrase degage un sentiment negatif😒')
      st.image(image3)
+     mixer.init()
+     mixer.music.load("predict_negatif.mp3")
+     mixer.music.play()
+if button_clicked:
+  pred(text)
+if voice_bt :
+    text2=vocale()
+    st.write(text2)
+    pred(text2)
