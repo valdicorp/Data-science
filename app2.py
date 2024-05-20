@@ -8,7 +8,7 @@ from PIL import Image
 from nltk.stem import WordNetLemmatizer
 import string
 from deep_translator import GoogleTranslator 
-import mixer
+import pygame.mixer as mixer
 # import speech_recognition as sr
 
 #nltk.download('punkt')
