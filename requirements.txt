@@ -3,5 +3,3 @@ nltk
 scikit-learn
 deep-translator
 pygame
-SpeechRecognition
-pyaudio
