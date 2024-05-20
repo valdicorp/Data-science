@@ -91,8 +91,6 @@ def pred(text):
   pred=sentiment_prediction(traduction)
   if pred==1:
      st.write('cette phrase degage un sentiment positif 😊')
-
-     langage='fr'
      st.image(image1)
      mixer.init()
      mixer.music.load("predict_positif.mp3")
