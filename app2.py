@@ -8,7 +8,9 @@ from PIL import Image
 from nltk.stem import WordNetLemmatizer
 import string
 from deep_translator import GoogleTranslator 
-from pygame import mixer
+import os
+from playsound import playsound
+os.system('cls')
 
 # import speech_recognition as sr
 
@@ -92,15 +94,17 @@ def pred(text):
   if pred==1:
      st.write('cette phrase degage un sentiment positif 😊')
      st.image(image1)
-     mixer.init()
-     mixer.music.load("predict_positif.mp3")
-     mixer.music.play()
+    #  mixer.init()
+    #  mixer.music.load("predict_positif.mp3")
+    #  mixer.music.play()
+     playsound('predict_positif.mp3')
   else:
      st.write('cette phrase degage un sentiment negatif😒')
      st.image(image3)
-     mixer.init()
-     mixer.music.load("predict_negatif.mp3")
-     mixer.music.play()
+     playsound('predict_negatif.mp3')
+    #  mixer.init()
+    #  mixer.music.load("predict_negatif.mp3")
+    #  mixer.music.play()
 if button_clicked:
   pred(text)
 # if voice_bt :
