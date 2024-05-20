@@ -2,5 +2,4 @@ joblib
 nltk
 scikit-learn
 deep-translator
-pygame
 mixer
