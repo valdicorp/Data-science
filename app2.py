@@ -12,8 +12,8 @@ from pygame import mixer
 
 # import speech_recognition as sr
 
-#nltk.download('punkt')
-#nltk.download('wordnet')
+nltk.download('punkt')
+nltk.download('wordnet')
 # vocale
 # def vocale():
 #     rec=sr.Recognizer()
