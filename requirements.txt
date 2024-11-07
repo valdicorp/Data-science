@@ -1,3 +1,4 @@
 joblib
 scikit-learn
 deep-translator
+pygame

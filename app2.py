@@ -8,11 +8,7 @@ from PIL import Image
 # from nltk.stem import WordNetLemmatizer
 import string
 from deep_translator import GoogleTranslator 
-# from pygame import mixer
-# nltk.download('/root/nltk_data/wordnet')
-# import speech_recognition as sr
-# nltk.download('punkt')
-# nltk.download('wordnet')
+from pygame import mixer
 
 # def vocale():
 #     rec=sr.Recognizer()
@@ -37,28 +33,8 @@ def clean_text(text):
     text = re.sub('[%s]' % re.escape(string.punctuation), '', text)  # Supprime la ponctuation
     text = re.sub('\n', '', text)  # Supprime les nouvelles lignes
     text = re.sub('\w*\d\w*', '', text)  # Supprime les mots contenant des chiffres
-    
-    # traduction
-    
-    #Tokenisation
-    # tokens=word_tokenize(text)
-    # # lematisation
-    # tokens2=[]
-    # for i in tokens:
-    #     lem1=WordNetLemmatizer().lemmatize(i,pos='v')
-    #     lem2=WordNetLemmatizer().lemmatize(lem1,pos='s')
-    #     lem=WordNetLemmatizer().lemmatize(lem2,pos='a')
-    #     tokens2.append(lem)
-    # tokens=tokens2
-    
-    # #suppresiion des mots vides
-    # stop_words=[]
-    # tokens=[word for word in tokens if word not in stop_words]
-    
-    #joindre les token en une seul chaine
-    cleaned_text=text
-    
-    return cleaned_text
+
+    return text
 
 #model load
 model=joblib.load(filename="sentiment.joblib")
@@ -91,15 +67,15 @@ def pred(text):
   if pred==1:
      st.write('cette phrase degage un sentiment positif 😊')
      st.image(image1)
-    #  mixer.init()
-    #  mixer.music.load("predict_positif.mp3")
-    #  mixer.music.play()
+     mixer.init()
+     mixer.music.load("predict_positif.mp3")
+     mixer.music.play()
   else:
      st.write('cette phrase degage un sentiment negatif😒')
      st.image(image3)
-    #  mixer.init()
-    #  mixer.music.load("predict_negatif.mp3")
-    #  mixer.music.play()
+     mixer.init()
+     mixer.music.load("predict_negatif.mp3")
+     mixer.music.play()
 if button_clicked:
   pred(text)
 # if voice_bt :
