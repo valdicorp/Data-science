@@ -9,7 +9,7 @@ from nltk.stem import WordNetLemmatizer
 import string
 from deep_translator import GoogleTranslator 
 # from pygame import mixer
-
+nltk.download('/root/nltk_data/wordnet')
 # import speech_recognition as sr
 # nltk.download('punkt')
 # nltk.download('wordnet')
