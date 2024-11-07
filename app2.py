@@ -1,9 +1,9 @@
 import streamlit as st
 import joblib
 import re
-import nltk
+# import nltk
 from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
+# from nltk.tokenize import word_tokenize
 from PIL import Image
 from nltk.stem import WordNetLemmatizer
 import string
@@ -41,22 +41,22 @@ def clean_text(text):
     # traduction
     
     #Tokenisation
-    tokens=word_tokenize(text)
-    # lematisation
-    tokens2=[]
-    for i in tokens:
-        lem1=WordNetLemmatizer().lemmatize(i,pos='v')
-        lem2=WordNetLemmatizer().lemmatize(lem1,pos='s')
-        lem=WordNetLemmatizer().lemmatize(lem2,pos='a')
-        tokens2.append(lem)
-    tokens=tokens2
+    # tokens=word_tokenize(text)
+    # # lematisation
+    # tokens2=[]
+    # for i in tokens:
+    #     lem1=WordNetLemmatizer().lemmatize(i,pos='v')
+    #     lem2=WordNetLemmatizer().lemmatize(lem1,pos='s')
+    #     lem=WordNetLemmatizer().lemmatize(lem2,pos='a')
+    #     tokens2.append(lem)
+    # tokens=tokens2
     
-    #suppresiion des mots vides
-    stop_words=[]
-    tokens=[word for word in tokens if word not in stop_words]
+    # #suppresiion des mots vides
+    # stop_words=[]
+    # tokens=[word for word in tokens if word not in stop_words]
     
     #joindre les token en une seul chaine
-    cleaned_text=' '.join(tokens)
+    cleaned_text=text
     
     return cleaned_text
 
