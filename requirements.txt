@@ -2,4 +2,3 @@ joblib
 nltk
 scikit-learn
 deep-translator
-pygame
