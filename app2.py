@@ -2,7 +2,7 @@ import streamlit as st
 import joblib
 import re
 # import nltk
-from nltk.corpus import stopwords
+# from nltk.corpus import stopwords
 # from nltk.tokenize import word_tokenize
 from PIL import Image
 from nltk.stem import WordNetLemmatizer
