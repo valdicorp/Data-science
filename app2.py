@@ -5,7 +5,7 @@ import re
 # from nltk.corpus import stopwords
 # from nltk.tokenize import word_tokenize
 from PIL import Image
-from nltk.stem import WordNetLemmatizer
+# from nltk.stem import WordNetLemmatizer
 import string
 from deep_translator import GoogleTranslator 
 # from pygame import mixer
