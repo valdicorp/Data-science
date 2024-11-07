@@ -10,20 +10,20 @@ import string
 from deep_translator import GoogleTranslator 
 from pygame import mixer
 
-# import speech_recognition as sr
+import speech_recognition as sr
 
 nltk.download('punkt')
 nltk.download('wordnet')
-# vocale
+
 # def vocale():
 #     rec=sr.Recognizer()
 #     mic=sr.Microphone()
 
-#     with mic as src:
-#         audio=rec.listen(src)
-#         text=rec.recognize_google(audio,language="fr-FR")
-#         # print(text)
-#     return text
+    # with mic as src:
+    #     audio=rec.listen(src)
+    #     text=rec.recognize_google(audio,language="fr-FR")
+    #     # print(text)
+    # return text
 
 
 # foction de clean
@@ -81,9 +81,9 @@ st.write(("cette application permet de predire le sentiment qui se degage d'une 
 st.write('')
 text = st.text_input("Entrer un text:", placeholder="exemple:I am feeling very sad and alone right now.")
 # voice_bt=st.button('Prediction  vocale')
-button_clicked = st.button("Prediction textuelle")
-# text2=""
-# st.write(text2)
+button_clicked = st.button("Prediction")
+text2=""
+st.write(text2)
 image1 = Image.open("joy2.jfif")
 image3 = Image.open("bad3.jfif")
 def pred(text):
@@ -92,15 +92,15 @@ def pred(text):
   if pred==1:
      st.write('cette phrase degage un sentiment positif 😊')
      st.image(image1)
-    #  mixer.init()
-    #  mixer.music.load("predict_positif.mp3")
-    #  mixer.music.play()
+     mixer.init()
+     mixer.music.load("predict_positif.mp3")
+     mixer.music.play()
   else:
      st.write('cette phrase degage un sentiment negatif😒')
      st.image(image3)
-    #  mixer.init()
-    #  mixer.music.load("predict_negatif.mp3")
-    #  mixer.music.play()
+     mixer.init()
+     mixer.music.load("predict_negatif.mp3")
+     mixer.music.play()
 if button_clicked:
   pred(text)
 # if voice_bt :
